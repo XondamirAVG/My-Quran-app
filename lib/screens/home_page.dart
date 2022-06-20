@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:quranorginapp/models/size_config.dart';
-import 'package:quranorginapp/screens/AudioPlayer_page.dart';
+import 'package:quranorginapp/screens/audioPlayer_page.dart';
 import 'package:quranorginapp/screens/search_page.dart';
 import 'package:quranorginapp/service/qurans_service.dart';
 

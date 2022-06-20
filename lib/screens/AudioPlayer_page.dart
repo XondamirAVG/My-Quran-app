@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:quranorginapp/components/url_adaptive.dart';
-import 'package:quranorginapp/screens/Filter_page.dart';
+import 'package:quranorginapp/screens/filter_page.dart';
 import 'package:quranorginapp/service/qurans_service.dart';
 import 'home_page.dart';
 import 'package:audioplayers/audioplayers.dart';

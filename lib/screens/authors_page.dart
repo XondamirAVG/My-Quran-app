@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:quranorginapp/models/size_config.dart';
-import 'package:quranorginapp/screens/Filter_page.dart';
+import 'package:quranorginapp/screens/filter_page.dart';
 
 class Authorspage extends StatefulWidget {
   double size;
