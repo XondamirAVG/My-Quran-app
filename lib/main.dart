@@ -14,16 +14,22 @@ class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
-    String youreToken = GetStorage().read('token');
+    bool exp = false;
+   if(GetStorage().hasData('token')){
+     String youreToken = GetStorage().read('token');
      Map<String,dynamic>decodedToken = JwtDecoder.decode(youreToken);
      bool isExpired = JwtDecoder.isExpired(youreToken);
+     exp = isExpired;
+       }else {
+         exp = true;
+       }
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: isExpired ? SingLoginPage() : HomePageView(onTab: false,),
+      home: exp ? SingLoginPage() : HomePageView(onTab: false,),
     );
   }
 }

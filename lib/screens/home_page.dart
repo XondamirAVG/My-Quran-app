@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:quranorginapp/models/size_config.dart';
 import 'package:quranorginapp/screens/audioPlayer_page.dart';
+import 'package:quranorginapp/screens/profile_page.dart';
 import 'package:quranorginapp/screens/search_page.dart';
 import 'package:quranorginapp/service/qurans_service.dart';
 
@@ -34,11 +35,16 @@ class HomePageView extends StatelessWidget {
                           SizedBox(
                             width: getWidth(16.0),
                           ),
-                          CircleAvatar(
-                            child: Image.network(
-                                "https://th.bing.com/th/id/R.87268fedb2e00fe4f1f86c13b85173c9?rik=iD71tTbmdyB5gw&riu=http%3a%2f%2fcdn.onlinewebfonts.com%2fsvg%2fimg_243887.png&ehk=%2bnbZwHeUR367MhgZ3EBB3OC1izT81pse1uNe%2bvi01EA%3d&risl=&pid=ImgRaw&r=0"),
-                            radius: getWidth(15.0),
-                          ), //dio +1
+                          InkWell(
+                            child: CircleAvatar(
+                              child: Image.network(
+                                  "https://th.bing.com/th/id/R.87268fedb2e00fe4f1f86c13b85173c9?rik=iD71tTbmdyB5gw&riu=http%3a%2f%2fcdn.onlinewebfonts.com%2fsvg%2fimg_243887.png&ehk=%2bnbZwHeUR367MhgZ3EBB3OC1izT81pse1uNe%2bvi01EA%3d&risl=&pid=ImgRaw&r=0"),
+                              radius: getWidth(15.0),
+                            ),
+                            onTap: (){
+                              Navigator.push(context, MaterialPageRoute(builder: (context) => ProfilePage()));
+                            },
+                          ),
                           SizedBox(
                             width: getWidth(104.0),
                           ),

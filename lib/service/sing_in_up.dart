@@ -12,6 +12,7 @@ class SignInUp{
 }
     );
     GetStorage().write('token', res.data['jwt']);
+    GetStorage().write('gmail', identifier);
     if(res.statusCode == 400){
       print("Hello");
     }
@@ -31,6 +32,7 @@ class SignInUp{
 }
     );
     GetStorage().write('token', res.data['jwt']);
+    GetStorage().write('gmail', identifier);
     if(res.statusCode == 400){
       print("Hello");
     }

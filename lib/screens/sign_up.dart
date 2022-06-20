@@ -57,7 +57,7 @@ Scaffold myScaffold(BuildContext context) {
             Padding(
               padding: EdgeInsets.only(top: getHeight(522.0)),
               child: Container(
-                height: getHeight(315.0),
+                height: getHeight(290.0),
                 decoration: BoxDecoration(
                     color: Colors.white,
                     borderRadius: BorderRadius.circular(20.0)),

@@ -55,7 +55,7 @@ Scaffold myScaffold(BuildContext context) {
               child: Image.asset("assets/images/masjid1.png", fit: BoxFit.fill),
             ),
             Padding(
-              padding: EdgeInsets.only(top: getHeight(522.0)),
+              padding: EdgeInsets.only(top: getHeight(493.0)),
               child: Container(
                 height: getHeight(315.0),
                 decoration: BoxDecoration(
