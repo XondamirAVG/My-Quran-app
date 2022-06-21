@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 import 'package:quranorginapp/components/showsnackbar.dart';
 import 'package:quranorginapp/cubit/login_cubit/login_cubit.dart';
@@ -83,10 +85,24 @@ Scaffold myScaffold(BuildContext context) {
                         child: Column(
                           children: [
                             TextFormField(
+                             style: TextStyle(color: Colors.black),
+                              cursorColor: Colors.black,
+                               decoration: InputDecoration(
+                               hintText: "Email",
+                               focusColor: Colors.blue,
+                             hintStyle: TextStyle(color: Colors.black),
+                              ),
                               controller:
                                   context.watch<LoginCubit>().emailController,
                             ),
                             TextFormField(
+                               style: TextStyle(color: Colors.black),
+                              cursorColor: Colors.black,
+                               decoration: InputDecoration(
+                                 focusColor: Colors.blue,
+                                  hintStyle: TextStyle(color: Colors.black),
+                               hintText: "Password"
+                              ),
                               controller: context
                                   .watch<LoginCubit>()
                                   .passwordController,
@@ -104,7 +120,7 @@ Scaffold myScaffold(BuildContext context) {
                                 shape: RoundedRectangleBorder(
                                     borderRadius: BorderRadius.circular(12.0)),
                               ),
-                              child: Text("Sign Up"),
+                              child: Text("Sign Up",style: TextStyle(color: Colors.black),),
                               onPressed: () {
                                 context.read<LoginCubit>().singUp(context);
                               },

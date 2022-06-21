@@ -83,10 +83,22 @@ Scaffold myScaffold(BuildContext context) {
                         child: Column(
                           children: [
                             TextFormField(
+                               style: TextStyle(color: Colors.black),
+                              decoration: InputDecoration(
+                                focusColor: Colors.blue,
+                               hintText: "Email",
+                                hintStyle: TextStyle(color: Colors.black),
+                              ),
                               controller:
                                   context.watch<LoginCubit>().emailController,
                             ),
-                            TextFormField(
+                            TextFormField(    
+                               style: TextStyle(color: Colors.black),   
+                               decoration: InputDecoration(
+                                 focusColor: Colors.blue,
+                               hintText: "Password",
+                                hintStyle: TextStyle(color: Colors.black),
+                              ),
                               controller: context
                                   .watch<LoginCubit>()
                                   .passwordController,
