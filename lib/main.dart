@@ -10,8 +10,10 @@ import 'package:path_provider/path_provider.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 Future<void>main() async{
   WidgetsFlutterBinding.ensureInitialized();
+  await GetStorage.init();
   final storage = await HydratedStorage.build(
   storageDirectory: await getApplicationDocumentsDirectory(),
+
 );
   HydratedBlocOverrides.runZoned(
   () => runApp(MyApp()),
