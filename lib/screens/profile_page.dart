@@ -66,7 +66,10 @@ class _ProfilePageState extends State<ProfilePage> {
               ),
               onTap: () {
                 GetStorage().remove(
-                  'token',
+                  'gmail',
+                );
+                 GetStorage().remove(
+                  '',
                 );
                 Navigator.push(context,
                     MaterialPageRoute(builder: (context) => SingLoginPage()));
