@@ -65,12 +65,14 @@ class _ProfilePageState extends State<ProfilePage> {
                 style: TextStyle(fontSize: 17.0,color: Colors.blue.shade400),
               ),
               onTap: () {
-                GetStorage().remove(
-                  'gmail',
+                setState(() {
+                    GetStorage().remove(
+                  'token',
                 );
                  GetStorage().remove(
-                  '',
+                  'gmail',
                 );
+                });
                 Navigator.push(context,
                     MaterialPageRoute(builder: (context) => SingLoginPage()));
               },
