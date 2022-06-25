@@ -1,0 +1,18 @@
+{
+  "reg_text": "Register",
+  "log_text": "Login",
+  "em_text": "email",
+  "pass_text": "password",
+  "bar_text": "Saved",
+  "srch_text": "Search",
+  "bc_text": "Back",
+  "log_out_text": "Log out",
+  "profil_text": "Profile",
+  "edit_text": "Edit language",
+  "dark_text": "Dark mode",
+  "filter_text": "Filter",
+  "fil_text": "Arabic text size and Translation of the meanings",
+  "chance_text": "Changing the reciters",
+  "sumit_text": "Submit changes",
+  "reciters_text": "Reciters"
+}

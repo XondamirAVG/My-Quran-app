@@ -3,7 +3,8 @@ import 'package:quranorginapp/models/size_config.dart';
 import 'package:quranorginapp/screens/audioPlayer_page.dart';
 import 'package:quranorginapp/screens/authors_page.dart';
 import 'package:syncfusion_flutter_sliders/sliders.dart';
-
+import '../translations/locale_keys.g.dart';
+import 'package:easy_localization/easy_localization.dart';
 class FilterPage extends StatefulWidget {
   double size;
   double sizetr;
@@ -43,7 +44,7 @@ class _FilterPageState extends State<FilterPage> {
                 width: getWidth(16.0),
               ),
               Text(
-                "Filter",
+                  LocaleKeys.filter_text.tr(),
                 style: TextStyle(fontSize: 22.0, fontWeight: FontWeight.bold),
               ),
               SizedBox(
@@ -66,7 +67,7 @@ class _FilterPageState extends State<FilterPage> {
                 width: getWidth(16.0),
               ),
               Text(
-                "Arabic text size",
+                 "Arabic text size",
                 style: TextStyle(color: Colors.grey.shade400, fontSize: 15.0),
               ),
             ],
@@ -98,7 +99,7 @@ class _FilterPageState extends State<FilterPage> {
           Row(
             children: [
               Text(
-                "Translation of the meanings",
+                  LocaleKeys.edit_text.tr(),
                 style: TextStyle(color: Colors.grey.shade400, fontSize: 15.0),
               )
             ],
@@ -142,12 +143,11 @@ class _FilterPageState extends State<FilterPage> {
                 width: getWidth(16.0),
               ),
               Text(
-                """Arabic text size and
-             Translation of the meanings""",
-                style: TextStyle(fontSize: 17.0, fontWeight: FontWeight.bold),
+                 LocaleKeys.fil_text.tr(),
+                style: TextStyle(fontSize: 12.0, fontWeight: FontWeight.bold),
               ),
               SizedBox(
-                width: getWidth(30.0),
+                width: getWidth(23.0),
               ),
               Switch.adaptive(
                 value: _value2,
@@ -233,7 +233,7 @@ class _FilterPageState extends State<FilterPage> {
                 width: getWidth(16.0),
               ),
               Text(
-                "Changing the reciters",
+                LocaleKeys.chance_text.tr(),
                 style: TextStyle(color: Colors.grey.shade400, fontSize: 15.0),
               ),
             ],
@@ -292,7 +292,7 @@ class _FilterPageState extends State<FilterPage> {
                   borderRadius: BorderRadius.circular(12.0)),
             ),
             child: Text(
-              "Submit changes",
+               LocaleKeys.sumit_text.tr(),
               style: TextStyle(
                 color: Colors.white,
                 fontSize: 20,

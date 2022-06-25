@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:quranorginapp/models/size_config.dart';
 import 'package:quranorginapp/screens/login_page.dart';
 import 'package:quranorginapp/screens/sign_up.dart';
-
+import '../translations/locale_keys.g.dart';
+import 'package:easy_localization/easy_localization.dart';
 class SingLoginPage extends StatelessWidget {
   const SingLoginPage({Key? key}) : super(key: key);
 
@@ -40,9 +41,9 @@ class SingLoginPage extends StatelessWidget {
                             width: getWidth(16.0),
                           ),
                           Text(
-                            "Login",
+                                  LocaleKeys.log_text.tr(),
                             style: TextStyle(
-                                fontWeight: FontWeight.bold, fontSize: 24.0),
+                                fontWeight: FontWeight.bold, fontSize: 16.0),
                           ),
                         ],
                       ),

@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:quranorginapp/models/size_config.dart';
 import 'package:quranorginapp/screens/filter_page.dart';
-
+import 'package:quranorginapp/translations/locale_keys.g.dart';
+import 'package:easy_localization/easy_localization.dart';
 class Authorspage extends StatefulWidget {
   double size;
   double sizetr;
@@ -47,7 +48,7 @@ class _AuthorspageState extends State<Authorspage> {
               ),
               InkWell(
                 child: Text(
-                  "Back",
+                   LocaleKeys.bc_text.tr(),
                   style: TextStyle(color: Colors.blue.shade400, fontSize: 17.0),
                 ),
                 onTap: () {
@@ -58,9 +59,9 @@ class _AuthorspageState extends State<Authorspage> {
                 width: getWidth(74.0),
               ),
               Text(
-                "Reciters",
+                LocaleKeys.reciters_text.tr(),
                 style: TextStyle(
-                  fontSize: 22,
+                  fontSize: 15,
                   fontWeight: FontWeight.bold,
                 ),
               ),
@@ -144,7 +145,7 @@ class _AuthorspageState extends State<Authorspage> {
                   borderRadius: BorderRadius.circular(12.0)),
             ),
             child: Text(
-              "Submit changes",
+              LocaleKeys.sumit_text.tr(),
               style: TextStyle(
                 color: Colors.white,
                 fontSize: 20,

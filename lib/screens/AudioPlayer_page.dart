@@ -5,7 +5,8 @@ import 'package:quranorginapp/service/qurans_service.dart';
 import 'home_page.dart';
 import 'package:audioplayers/audioplayers.dart';
 import 'package:quranorginapp/models/size_config.dart';
-
+import '../translations/locale_keys.g.dart';
+import 'package:easy_localization/easy_localization.dart';
 class AudiuPlayerPage extends StatefulWidget {
   double size;
   double sizetr;
@@ -97,7 +98,7 @@ class _AudiuPlayerPageState extends State<AudiuPlayerPage> {
                       ),
                       InkWell(
                         child: Text(
-                          "Back",
+                           LocaleKeys.bc_text.tr(),
                           style: TextStyle(
                               color: Colors.blue.shade300, fontSize: 17.0),
                         ),
@@ -124,7 +125,7 @@ class _AudiuPlayerPageState extends State<AudiuPlayerPage> {
                       ),
                       InkWell(
                         child: Text(
-                          "Filter",
+                           LocaleKeys.filter_text.tr(),
                           style: TextStyle(
                               color: Colors.blue.shade300, fontSize: 17.0),
                         ),

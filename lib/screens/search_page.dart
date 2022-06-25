@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:quranorginapp/models/size_config.dart';
-
+import '../translations/locale_keys.g.dart';
+import 'package:easy_localization/easy_localization.dart';
 class SearchPage extends StatelessWidget {
   const SearchPage({Key? key}) : super(key: key);
 
@@ -32,7 +33,7 @@ class SearchPage extends StatelessWidget {
               ),
               InkWell(
                 child: Text(
-                  "Back",
+                 LocaleKeys.bc_text.tr(),
                   style: TextStyle(
                     color: Colors.blue.shade300,
                   ),
@@ -45,7 +46,7 @@ class SearchPage extends StatelessWidget {
                 width: getWidth(54.0),
               ),
               Text(
-                "Search",
+                LocaleKeys.srch_text.tr(),
                 style: TextStyle(fontSize: 17.0, fontWeight: FontWeight.bold),
               ),
             ],
@@ -62,7 +63,7 @@ class SearchPage extends StatelessWidget {
                   borderRadius: BorderRadius.circular(15),
                 ),
                 icon: Icon(Icons.search),
-                labelText: "Search",
+                labelText:LocaleKeys.srch_text.tr(),
                 suffixIcon: Icon(Icons.mic),
                 focusedBorder: OutlineInputBorder(
                   borderSide:

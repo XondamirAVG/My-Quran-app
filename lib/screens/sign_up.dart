@@ -6,7 +6,8 @@ import 'package:quranorginapp/cubit/login_cubit/login_cubit.dart';
 import 'package:quranorginapp/cubit/login_cubit/login_state.dart';
 import 'package:quranorginapp/models/size_config.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-
+import '../translations/locale_keys.g.dart';
+import 'package:easy_localization/easy_localization.dart';
 class SingUpPage extends StatelessWidget {
   const SingUpPage({Key? key}) : super(key: key);
 
@@ -74,7 +75,7 @@ Scaffold myScaffold(BuildContext context) {
                           width: getWidth(16.0),
                         ),
                         Text(
-                          "Register",
+                          LocaleKeys.reg_text.tr(),
                           style: TextStyle(
                               fontWeight: FontWeight.bold, fontSize: 24.0),
                         ),
@@ -88,7 +89,7 @@ Scaffold myScaffold(BuildContext context) {
                              style: TextStyle(color: Colors.black),
                               cursorColor: Colors.black,
                                decoration: InputDecoration(
-                               hintText: "Email",
+                               hintText: LocaleKeys.em_text.tr(),
                                focusColor: Colors.blue,
                              hintStyle: TextStyle(color: Colors.black),
                               ),
@@ -101,7 +102,7 @@ Scaffold myScaffold(BuildContext context) {
                                decoration: InputDecoration(
                                  focusColor: Colors.blue,
                                   hintStyle: TextStyle(color: Colors.black),
-                               hintText: "Password"
+                               hintText: LocaleKeys.pass_text.tr(),
                               ),
                               controller: context
                                   .watch<LoginCubit>()

@@ -5,6 +5,8 @@ import 'package:quranorginapp/models/size_config.dart';
 import 'package:quranorginapp/screens/sign_login_page.dart';
 import 'package:jwt_decoder/jwt_decoder.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import '../translations/locale_keys.g.dart';
+import 'package:easy_localization/easy_localization.dart';
 class ProfilePage extends StatefulWidget {
   const ProfilePage({Key? key}) : super(key: key);
 
@@ -15,7 +17,7 @@ class ProfilePage extends StatefulWidget {
 String youreToken = GetStorage().read('token');
 DateTime expirationDate = JwtDecoder.getExpirationDate(youreToken);
 String gmail = GetStorage().read('gmail');
-int group = 1;
+int? group ;
 bool _value2 = false;
 class _ProfilePageState extends State<ProfilePage> {
   @override
@@ -42,8 +44,8 @@ class _ProfilePageState extends State<ProfilePage> {
             ),
             InkWell(
               child: Text(
-                "Back",
-                style: TextStyle(fontSize: 17.0,color: Colors.blue.shade400),
+                LocaleKeys.bc_text.tr(),
+                style: TextStyle(fontSize: 14.0,color: Colors.blue.shade400),
               ),
                 onTap:(){
                 Navigator.pop(context);
@@ -53,16 +55,16 @@ class _ProfilePageState extends State<ProfilePage> {
               width: getWidth(80.0),
             ),
             Text(
-              "Profil",
+              LocaleKeys.profil_text.tr(),
               style: TextStyle(fontSize: 17.0),
             ),
             SizedBox(
-              width: getWidth(90.0),
+              width: getWidth(70.0),
             ),
             InkWell(
               child: Text(
-                "Log out",
-                style: TextStyle(fontSize: 17.0,color: Colors.blue.shade400),
+                LocaleKeys.log_out_text.tr(),
+                style: TextStyle(fontSize: 13.0,color: Colors.blue.shade400),
               ),
               onTap: () {
                 setState(() {
@@ -100,7 +102,7 @@ class _ProfilePageState extends State<ProfilePage> {
               width: getWidth(16.0),
             ),
             Text(
-              "Edit language",
+              LocaleKeys.edit_text.tr(),
               style: TextStyle(fontSize: 13.0, color: Colors.grey.shade300),
             ),
           ],
@@ -117,8 +119,17 @@ class _ProfilePageState extends State<ProfilePage> {
                 value: 1,
                 groupValue: group,
                 onChanged: (int? T) {
-                  setState(() {
-                    group = T!;
+                  setState(() async{
+                   group = T!;
+                   await context.setLocale(Locale('en'));
+                   if(LocaleKeys.bc_text.tr() == "Back"){
+                    group = 1;
+                   }else if (group == null){
+                     group = 1;
+                   }
+                   else {
+                     print("ohsamadi:(1");
+                   }
                   });
                 }),
                 SizedBox(width: getWidth(7.67),),
@@ -128,8 +139,17 @@ class _ProfilePageState extends State<ProfilePage> {
                 value: 2,
                 groupValue: group,
                 onChanged: (int? T) {
-                  setState(() {
-                    group = T!;
+                  setState(()async {
+                       group = T!;
+                     await context.setLocale(Locale('tr'));
+                        if(LocaleKeys.bc_text.tr() == "Geri"){
+                    group = 2;
+                   }
+                   else if (group == null){
+                     group = 1;
+                   }else {
+                     print("ohsamadi:(2");
+                   }
                   });
                 }),
                 SizedBox(width: getWidth(7.67),),
@@ -146,8 +166,16 @@ class _ProfilePageState extends State<ProfilePage> {
                 value: 3,
                 groupValue: group,
                 onChanged: (int? T) {
-                  setState(() {
-                    group = T!;
+                  setState(()async {
+                        group = T!;
+                     await context.setLocale(Locale('ru'));
+                      if(LocaleKeys.bc_text.tr() == "Назад"){
+                    group = 3;
+                   }else if (group == null){
+                     group = 1;
+                   }else {
+                     print("ohsamadi:(3");
+                   }
                   });
                 }),
                 SizedBox(width: getWidth(7.67),),
@@ -157,8 +185,16 @@ class _ProfilePageState extends State<ProfilePage> {
                 value: 4,
                 groupValue: group,
                 onChanged: (int? T) {
-                  setState(() {
-                    group = T!;
+                   setState(()async {
+                       group = T!;
+                     await context.setLocale(Locale('uz'));
+                         if(LocaleKeys.bc_text.tr() == "Orqaga"){
+                    group = 4;
+                   }else if (group == null){
+                     group = 1;
+                   }else {
+                     print("ohsamadi:(4");
+                   }
                   });
                 }),
                 SizedBox(width: getWidth(7.67),),
@@ -170,8 +206,8 @@ class _ProfilePageState extends State<ProfilePage> {
         Row(
           children: [
             SizedBox(width: getWidth(16.0),),
-            Text("Dark mode",style: TextStyle(fontSize: 17.0),),
-            SizedBox(width: getWidth(200.0),),
+            Text(LocaleKeys.dark_text.tr(),style: TextStyle(fontSize: 17.0),),
+            SizedBox(width: getWidth(170.0),),
             BlocBuilder<ThemeCubit,bool>(
               builder: ((context, state){
                 return Switch.adaptive(

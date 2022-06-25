@@ -4,12 +4,13 @@ import 'package:quranorginapp/screens/audioPlayer_page.dart';
 import 'package:quranorginapp/screens/profile_page.dart';
 import 'package:quranorginapp/screens/search_page.dart';
 import 'package:quranorginapp/service/qurans_service.dart';
-
+import '../translations/locale_keys.g.dart';
+import 'package:easy_localization/easy_localization.dart';
 class HomePageView extends StatelessWidget {
   int? indTab;
   bool onTab;
   HomePageView({Key? key, this.indTab, required this.onTab}) : super(key: key);
-
+  String save =LocaleKeys.bar_text.tr();
   @override
   Widget build(BuildContext context) {
     SizeConfig().init(context);
@@ -79,7 +80,7 @@ class HomePageView extends StatelessWidget {
                               indicator: BoxDecoration(
                                   color: Colors.white,
                                   borderRadius: BorderRadius.circular(10.0)),
-                              tabs: const [
+                              tabs:  [
                                 Tab(
                                   text: 'Sura',
                                 ),
@@ -87,7 +88,7 @@ class HomePageView extends StatelessWidget {
                                   text: 'Juz',
                                 ),
                                 Tab(
-                                  text: 'Saved',
+                                  text: "$save",
                                 ),
                               ]),
                         ),
